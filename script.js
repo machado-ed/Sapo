@@ -14,4 +14,7 @@ function move() {
     coinsDisplay.textContent = coins;
 }
 
+<<<<<<< HEAD
 const coinsDisplay = document.getElementById("coins");
+=======
+>>>>>>> 2346ec3dd6f3ec5decfc607fe01300b16b33493a
