@@ -1,0 +1,112 @@
+:root {
+    --bgPosX: 0px
+    --fgPosX: 0px
+}
+
+* {
+    justify-items: center;
+    text-align: center;
+    margin: 0;
+}
+
+body {
+    transition: background-position 0.2s;
+    margin: 0;
+    overflow: hidden;
+    background-image: url(assets/tree.jpg);
+    bottom: 0px;
+    background-repeat: repeat-x;
+    background-size: 100% 60vh ;
+    background-position: var(--bgPosX) 0;
+}
+
+img {
+    width: 15vw;
+}
+h2{
+    font-size: 1vw;
+}
+.mGrid {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+        "dis"
+        "frog"
+        "upgrades";
+    grid-template-rows: 35vh 40vh 35vh;
+
+}
+
+.textDisplay {
+    grid-area: dis;
+}
+
+.frogBtn {
+    cursor: pointer;
+    transition: transform 0.05s;
+    grid-area: frog;
+    position: absolute;
+    bottom: 40vh;
+    margin: 0;
+}
+
+.frogBtn:hover{
+    transform: translateY(10px) scaleX(110%) scaleY(90%);
+}
+
+.frogBtn:active {
+    transform: translateY(-30px) scaleX(90%);
+}
+
+.upgradesList {
+    grid-area: upgrades;
+    background-color: #311003;
+    height: 16vh;
+    width: 60vw;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    align-items : center;
+    justify-content:space-around ;
+    border: #b85028 solid 10px;
+    border-radius: 10px;
+    scrollbar-color: #e2943a #703e1d;
+    button {
+        margin: 0 10px;
+        flex-shrink: 0;
+        height: 80%;
+        width: 30%;
+        background-color: #b85028;
+        border: #e2943a solid 5px;
+        border-radius: 10px;
+    }
+
+
+}
+
+
+.ground {
+    transition: background-position 0.1s;
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    z-index: -1;
+    height: 50vh;
+    width: 120vw;
+    background-image: url(assets/chao.webp);
+    background-size: 256px 100%;
+    background-position:  var(--fgPosX) 0 
+}
+
+
+
+@keyframes groundParallax {
+    from {
+        background-position: left;
+    }
+
+    to {
+        background-position: 512px;
+    }
+
+}
