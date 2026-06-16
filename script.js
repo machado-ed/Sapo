@@ -12,3 +12,4 @@ function move()
     document.documentElement.style.setProperty('--fgPosX',fgPosX+'px');
     
 }
+
