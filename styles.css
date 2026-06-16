@@ -110,3 +110,23 @@ h2{
     }
 
 }
+
+.coinsDisplay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background-color: #311003;
+    color: white;
+
+    padding: 10px 20px;
+    border: #b85028 solid 5px;
+    border-radius: 10px;
+
+    z-index: 100;
+}
+
+.coinsDisplay h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
