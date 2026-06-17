@@ -15,10 +15,10 @@ body {
     transition: background-position 0.2s;
     margin: 0;
     overflow: hidden;
-    background-image: url(assets/tree.jpg);
+    background-image: url(assets/tree.webp);
     bottom: 0px;
     background-repeat: repeat-x;
-    background-size: 100% 60vh;
+    background-size: 50% 55vh;
     background-position: var(--bgPosX) 0;
 }
 
