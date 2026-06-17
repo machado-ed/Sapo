@@ -1,7 +1,7 @@
 :root {
     --bgPosX: 0px;
     --fgPosX: 0px;
-    --color1:#703e1d;
+    --color1: #703e1d;
     --color2: #e2943a;
 }
 
@@ -14,18 +14,19 @@
 body {
     transition: background-position 0.2s;
     margin: 0;
-    overflow:hidden;
+    overflow: hidden;
     background-image: url(assets/tree.jpg);
     bottom: 0px;
     background-repeat: repeat-x;
-    background-size: 100% 60vh ;
+    background-size: 100% 60vh;
     background-position: var(--bgPosX) 0;
 }
 
 img {
     width: 15vw;
 }
-h2{
+
+h2 {
     font-size: 1vw;
 }
 
@@ -43,14 +44,15 @@ h2{
     margin: 0;
 }
 
-.frogBtn:hover{
+.frogBtn:hover {
     transform: translateY(10px) scaleX(110%) scaleY(90%);
 }
 
 .frogBtn:active {
     transform: translateY(-30px) scaleX(90%);
 }
-.upgradeMenu{
+
+.upgradeMenu {
     position: absolute;
     border-image: url(assets/menu.webp) 230 240 240 230 fill / 48px 32px 48px 32px;
     padding: 48px 32px;
@@ -62,6 +64,7 @@ h2{
     bottom: 0;
     min-width: 300px;
 }
+
 .upgradesList {
     height: 100%;
     width: 100%;
@@ -69,14 +72,15 @@ h2{
     flex-wrap: nowrap;
     overflow-y: scroll;
     flex-direction: column;
-    align-items : center;
-    justify-content:space-around ;
+    align-items: center;
+    justify-content: space-around;
 
     scrollbar-color: #e2943a #703e1d;
+
     button {
         background-clip: border-box;
         z-index: 0;
-        margin:10px 0 ;
+        margin: 10px 0;
         flex-shrink: 0;
         height: 30%;
         max-height: 200px;
@@ -101,7 +105,7 @@ h2{
     width: 120vw;
     background-image: url(assets/chao.webp);
     background-size: 256px 100%;
-    background-position:  var(--fgPosX) 0 
+    background-position: var(--fgPosX) 0
 }
 
 
@@ -118,7 +122,7 @@ h2{
 }
 
 .coinsDisplay {
-    
+
     position: absolute;
     top: 0px;
     right: 00px;
@@ -127,11 +131,11 @@ h2{
     color: rgb(0, 0, 0);
 
     padding: 48px 32px;
-   border-image: url(assets/menu.webp) 230 240 240 230 fill / 48px 32px 48px 32px;
+    border-image: url(assets/menu.webp) 230 240 240 230 fill / 48px 32px 48px 32px;
     border-radius: 10px;
-min-width: 235px;
-height: 5vh;
-width: 10vw;
+    min-width: 300px;
+    height: 5vh;
+    width: 10vw;
 
     z-index: 100;
 }
