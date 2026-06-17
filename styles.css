@@ -125,17 +125,19 @@ h2 {
 
     position: absolute;
     top: 0px;
-    right: 00px;
+    right: 0px;
+    width: 20vw;
 
     background-color: var(--color1);
     color: rgb(0, 0, 0);
-
+    box-sizing: border-box;
     padding: 48px 32px;
     border-image: url(assets/menu.webp) 230 240 240 230 fill / 48px 32px 48px 32px;
     border-radius: 10px;
     min-width: 300px;
     height: 5vh;
     width: 10vw;
+height: 20vh;
 
     z-index: 100;
 }
