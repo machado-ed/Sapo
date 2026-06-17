@@ -118,16 +118,20 @@ h2{
 }
 
 .coinsDisplay {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    
+    position: absolute;
+    top: 0px;
+    right: 00px;
 
     background-color: var(--color1);
-    color: white;
+    color: rgb(0, 0, 0);
 
-    padding: 10px 20px;
-    border: var(--color2) solid 5px;
+    padding: 48px 32px;
+   border-image: url(assets/menu.webp) 230 240 240 230 fill / 48px 32px 48px 32px;
     border-radius: 10px;
+min-width: 235px;
+height: 5vh;
+width: 10vw;
 
     z-index: 100;
 }
