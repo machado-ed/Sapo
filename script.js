@@ -1,6 +1,6 @@
 let bgPosX = 0
 let fgPosX = 0
-let rDis = parseFloat(42195)
+let rDis = parseFloat("42195")
 let coins = 0
 
 function move() {
