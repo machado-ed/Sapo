@@ -3,6 +3,7 @@
     --fgPosX: 0px;
     --color1: #703e1d;
     --color2: #e2943a;
+    --jmpHg: 50px;
 }
 
 * {
@@ -110,15 +111,8 @@ h2 {
 
 
 
-@keyframes groundParallax {
-    from {
-        background-position: left;
-    }
-
-    to {
-        background-position: 512px;
-    }
-
+@keyframes numJmp {
+ 50%{ transform: translateX(10px);}
 }
 
 .coinsDisplay {
@@ -140,9 +134,16 @@ h2 {
     width: 20vw;
     height: 20vh;
     z-index: 100;
-}
+    .valor
+    {
+        transition: all 0.2s;
+        transform: translateY(calc(var(--jmpHg)*-1));
+    }
 
+}
 .coinsDisplay h2 {
+    display: inline;
     font-size: 1.2rem;
     margin: 0;
 }
+
