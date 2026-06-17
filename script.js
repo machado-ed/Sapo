@@ -1,6 +1,6 @@
 let bgPosX = 0
 let fgPosX = 0
-let rDis = parseFloat("42195")
+let rDis = parseFloat("4219")
 let coins = 0
 
 function move() {
@@ -14,4 +14,6 @@ function move() {
     coinsDisplay.textContent = coins;
 }
 
+
 const coinsDisplay = document.getElementById("coins");
+
