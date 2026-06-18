@@ -103,6 +103,7 @@ progress {
     scrollbar-color: #e2943a #703e1d;
 
     button {
+        color:white;
         background-clip: border-box;
         z-index: 0;
         margin: 10px 0;
@@ -114,6 +115,17 @@ progress {
         background-color: var(--color1);
         border: var(--color2) solid 5px;
         border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        cursor: pointer;
+        div{
+            display: flex;
+            flex-direction: column;
+            img{
+                width: 2vw;
+            }
+        }
     }
 
 
