@@ -3,6 +3,8 @@
     --fgPosX: 0px;
     --color1: #703e1d;
     --color2: #e2943a;
+    --percentage: 0;
+    --progressImg: calc(5px + (-10vw * var(--percentage)));
     --jmpHg: 0px;
 }
 
@@ -29,11 +31,33 @@ img {
 
 h2 {
     font-size: 1vw;
+    font-family: 'Courier New', Courier, monospace;
 }
 
+progress {
+    direction: rtl;
+}
 
 .textDisplay {
-    grid-area: dis;
+    border: var(--color2) 5px solid;
+    background-color: var(--color1);
+    padding: 10px;
+    color: white;
+}
+
+.distanceLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 10vw;
+    img {
+        width: 0.5vw;
+        transform: translateX(var(--progressImg));
+    }
+
+    progress {
+        width: 100%;
+    }
 }
 
 .frogBtn {
@@ -112,7 +136,9 @@ h2 {
 
 
 @keyframes numJmp {
- 50%{ transform: translateX(10px);}
+    50% {
+        transform: translateX(10px);
+    }
 }
 
 .coinsDisplay {
@@ -134,16 +160,16 @@ h2 {
     width: 20vw;
     height: 20vh;
     z-index: 100;
-    .valor
-    {
+
+    .valor {
         transition: all 0.2s;
         transform: translateY(calc(var(--jmpHg)*-1));
     }
 
 }
+
 .coinsDisplay h2 {
     display: inline;
     font-size: 1.2rem;
     margin: 0;
 }
-

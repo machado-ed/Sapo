@@ -1,47 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="assets/frog icon.webp" type="image/x-icon">
     <title>Sapo corre uma maratona</title>
 </head>
 
 <body>
-    <main >
+    <main>
         <div class="textDisplay">
             <h2 id="stepL">Faltando:42195</h2>
+            <div class="distanceLeft">
+                <img src="assets/frog icon.webp" alt="">
+                <progress id="progressBar" max="1" value="0"></progress>
+            </div>
         </div>
         <div class="frogBtn">
             <img onclick="move()" src="assets/frog.webp" alt="sapo">
             </a>
         </div>
-        
+
         <div class="coinsDisplay">
-            <h2>Pulos Acumulados:</h2> <div class="valor"> <h2 id="coins">0</h2> </div>
+            <h2>Pulos Acumulados:</h2>
+            <div class="valor">
+                <h2 id="coins">0</h2>
+            </div>
         </div>
         <div class="upgradeMenu">
-        <div class="upgradesList">
-            <button type="button">
-                <h2>Pulos Mais Altos</h2>
-            </button>
-            <button type="button">Pulos Automático
-            </button>
-            <button type="button">
-                Pulos Mais Longos
-            </button>
-            <button type="button">
-                Pulos Mais Rápidos
-            </button>
-            <button type="button">upgrade 1</button>
-            </ul>
+            <div class="upgradesList">
+                <button type="button">
+                    <h2>Pulos Mais Altos</h2>
+                </button>
+                <button type="button">
+                    <h2>Pulos Automático</h2>
+                </button>
+                <button type="button">
+                    <h2>Pulos Mais Longos</h2>
+                </button>
+                <button type="button">
+                    <h2>Pulos Mais Rápidos</h2>
+                </button>
+                <button type="button">
+                    <h2>upgrade 1</h2>
+                </button>
+                </ul>
+            </div>
         </div>
-         </div>
-    
-    <div id="chao" class="ground">
-    </div>
-</main>
+
+        <div id="chao" class="ground">
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 
