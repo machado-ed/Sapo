@@ -30,10 +30,11 @@ img {
 }
 
 h2 {
-    font-size: 1vw;
+    font-size: 1.5vw;
     font-family: 'Courier New', Courier, monospace;
 }
 
+p{font-size: 1vw;}
 progress {
     direction: rtl;
 }
@@ -103,6 +104,7 @@ progress {
     scrollbar-color: #e2943a #703e1d;
 
     button {
+        transition: transform 0.2s;
         color:white;
         background-clip: border-box;
         z-index: 0;
@@ -125,7 +127,15 @@ progress {
             img{
                 width: 2vw;
             }
+             .flavorText{
+                color: lightgray;
+                font-size: 0.75vw;
+             }
         }
+    }
+    button:hover{
+        transform: translatey(-10px);
+        filter: hue-rotate(-20deg);
     }
 
 
