@@ -35,7 +35,7 @@ function move() {
        cssVar.setProperty('--jmpHg','0px'); 
     }, 100);
 
-// animação de pulo do sapo
+// animação de pulo do sapo quero usar em booster tipo x2 quando clica mais rapido
     frog.classList.remove("glow");
 
 // força o navegador a reiniciar a animação se n ele vai funcionar so no primeiro clique
