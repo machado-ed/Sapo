@@ -195,3 +195,23 @@ progress {
     font-size: 1.2rem;
     margin: 0;
 }
+/* Efeitos de animação */
+.glow {
+    animation: glow 0.2s;
+}
+
+@keyframes glow {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(2.5)
+                drop-shadow(0 0 10px #fff799)
+                drop-shadow(0 0 20px #ffd700);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}

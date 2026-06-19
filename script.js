@@ -1,11 +1,12 @@
 //Variveis pro css
 let bgPosX = 0
 let fgPosX = 0
-let rDis = parseFloat("42195")
+let rDis = parseFloat("4")
 let pDis = 0
 let wDis = 0
 const cssVar = document.documentElement.style
 const coinsDisplay = document.getElementById("coins");
+const frog = document.getElementById("frog"); //variaveis para o sapo
 //variaveis pro jogo
 let coins = 0
 let coinVal = 1
@@ -33,7 +34,27 @@ function move() {
     var coinJmp =setTimeout(() => {
        cssVar.setProperty('--jmpHg','0px'); 
     }, 100);
+
+// animação de pulo do sapo
+    frog.classList.remove("glow");
+
+// força o navegador a reiniciar a animação se n ele vai funcionar so no primeiro clique
+void frog.offsetWidth;
+
+frog.classList.add("glow");
+
+// fim de jogo linha 37 a 41
+    if (rDis <= 0) {
+    alert("Parabéns!🐸 Depois de 42.195 km, o sapo finalmente terminou a maratona!");
+    
+    window.location.href = "https://www.google.com/search?q=mouse+novo"; 
+
+    //if (rDis <= 0) {
+    //window.open("https://www.google.com/search?q=mouse+novo", "_blank");
+    //linha 52 e 53 são para abrir o link em uma nova aba, mas n ta funcionando, por isso coloqueiem comentario que é para abrir na mesma aba se abrir em uma nova aba fica negativo e abrindo dnv td hora  
 }
+}
+
 
 
 //estou fazendo a divisao dos upgrades em melhora a obtencao de moedas 
