@@ -6,11 +6,12 @@ let pDis = 0
 let wDis = 0
 
 let coinVal = 1
+let walkVal = 0.1
 function move() {
-    bgPosX += 2;
-    fgPosX += 16
-    rDis -= 200
-    wDis += 200
+    bgPosX += 20 * walkVal;
+    fgPosX += 160 * walkVal;
+    rDis -= walkVal
+    wDis += walkVal
     pDis = wDis / 42195 
     clearTimeout(coinJmp)
     document.documentElement.style.setProperty('--jmpHg','0px');
@@ -29,7 +30,10 @@ function move() {
 
 
 const coinsDisplay = document.getElementById("coins");
-
+//estou fazendo a divisao dos upgrades em melhora a obtencao de moedas 
+// e outra que melhora a progressao do objetivo
+//assim como multiplicadores respectivamente
+//nao sei direito como fazer para animar o autoclicker
 function jmpDis(){}
 function hpmHgt(){}
 function autoJmp(){}
@@ -37,6 +41,7 @@ function valCoinUp()
 {
     if (coins >= 10)
         {
+            //falta incrementar o valor
             coinVal +=1;
             coins -= 10
             coinsDisplay.textContent = coins;
