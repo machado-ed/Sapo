@@ -1,3 +1,4 @@
+// nao tem nada balanceado nos upgrades
 //Variveis pro css
 let bgPosX = 0
 let fgPosX = 0
