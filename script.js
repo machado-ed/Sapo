@@ -2,7 +2,7 @@
 //Variveis pro css
 let bgPosX = 0
 let fgPosX = 0
-let rDis = parseFloat("42195")
+let rDis = parseFloat("500")
 let pDis = 0
 let wDis = 0
 let frogJmpHgt = -10
@@ -64,9 +64,9 @@ function move() {
 
     // fim de jogo linha 37 a 41
     if (rDis <= 0) {
-        alert("Parabéns!🐸 Depois de 42.195 km, o sapo finalmente terminou a maratona!");
+        alert("Parabéns!🐸 Depois de 500 km, o sapo finalmente terminou a maratona!");
 
-        window.location.href = "https://www.google.com/search?q=mouse+novo";
+        window.location.href = "https://www.google.com/search?q=MOUSE+NOVO";
 
         //if (rDis <= 0) {
         //window.open("https://www.google.com/search?q=mouse+novo", "_blank");
