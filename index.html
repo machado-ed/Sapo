@@ -12,7 +12,7 @@
 <body>
     <main>
         <div class="textDisplay">
-            <h2 id="stepL">Faltando:42195</h2>
+            <h2 id="stepL">Faltando: 500</h2>
             <div class="distanceLeft">
                 <img src="assets/frog icon.webp" alt="">
                 <progress id="progressBar" max="1" value="0"></progress>
@@ -24,66 +24,100 @@
         </div>
 
         <div class="coinsDisplay">
+            <div class="valor">
             <h2>Motivação:</h2>
+        </div>
             <div class="valor">
                 <h2 id="coins">0</h2>
             </div>
         </div>
+
         <div class="upgradeMenu">
             <div class="upgradesList">
+
                 <button type="button" onclick="valCoinUp()">
-                    <div>
-                        <h2>musíca de academia</h2>
-                        <p class="flavorText">"A motivação aumentou. A vontade de treinar ainda está carregando.."</p>
-                        <p>Ganho de motivação +1</p>
-                    </div>
-                    <div><!-- imagem placeholder-->
-                        <img src="assets/frog icon.webp" alt="jump coin">
-                        <p id="valor1">10</p>
+                    <h2>musíca de academia</h2>
+                    <div class="btnContent">
+                        <div>
+                            <h1 id="numComp1">0</h2>
+                        </div>
+                        <div>
+                            <p class="flavorText">"A motivação aumentou. A vontade de treinar ainda está carregando.."
+                            </p>
+                            <p>Ganho de motivação +1</p>
+                        </div>
+                        <div><!-- imagem placeholder-->
+                            <img src="assets/frog icon.webp" alt="jump coin">
+                            <p id="valor1">10</p>
+                        </div>
                     </div>
                 </button>
+
                 <button type="button" onclick="jmpDis()">
-                    <div>
-                        <h2>Pulos Mais Altos</h2>
-                        <p class="flavorText">"Cuidado ao pular, o satélite pode cobrar pedágio."</p>
-                        <p>Aumenta a altura dos seus pulos</p>
-                    </div>
-                    <div>
-                        <img src="assets/frog icon.webp" alt="jump coin">
-                        <p id="valor2">20</p>
+                    <h2>Pulos Mais Altos</h2>
+                    <div class="btnContent">
+                        <div>
+                            <h1 id="numComp2">0</h2>
+                        </div>
+                        <div>
+                            <p class="flavorText">"Cuidado ao pular, o satélite pode cobrar pedágio."</p>
+                            <p>Distancia percorrida por pulo</p>
+                        </div>
+                        <div>
+                            <img src="assets/frog icon.webp" alt="jump coin">
+                            <p id="valor2">20</p>
+                        </div>
                     </div>
                 </button>
+
                 <button type="button" onclick="autoJmp()">
-                    <div>
-                        <h2>Momentum</h2>
-                        <p class="flavorText">"1ª lei de newton, uma vez que começou, é dificil parar"</p>
-                        <p>Pula automaticamente a cada 10 segundos</p>
-                    </div>
-                    <div>
-                        <img src="assets/frog icon.webp" alt="jump coin">
-                        <p id="valor3">30</p>
+                    <h2>Momentum</h2>
+                    <div class="btnContent">
+                        <div>
+                            <h1 id="numComp3">0</h2>
+                        </div>
+                        <div>
+                            <p class="flavorText">"1ª lei de newton, uma vez que começou, é dificil parar"</p>
+                            <p>Pula automaticamente a cada alguns segundos</p>
+                        </div>
+                        <div>
+                            <img src="assets/frog icon.webp" alt="jump coin">
+                            <p id="valor3">30</p>
+                        </div>
                     </div>
                 </button>
+
                 <button type="button" onclick="valCoinMult()">
-                    <div>
-                        <h2>frases motivacionais</h2>
-                        <p class="flavorText">"Seja a mudança que você quer ver nos seus pontos."</p>
-                        <p>multiplica o ganho de pontos em 25%</p>
-                    </div>
-                    <div>
-                        <img src="assets/frog icon.webp" alt="jump coin">
-                        <p id="valor4">30</p>
+                    <h2>frases motivacionais</h2>
+                    <div class="btnContent">
+                        <div>
+                            <h1 id="numComp4">0</h2>
+                        </div>
+                        <div>
+                            <p class="flavorText">"Seja a mudança que você quer ver nos seus pontos."</p>
+                            <p>multiplica o ganho de pontos</p>
+                        </div>
+                        <div>
+                            <img src="assets/frog icon.webp" alt="jump coin">
+                            <p id="valor4">30</p>
+                        </div>
                     </div>
                 </button>
+
                 <button type="button" onclick="jmpHgt()">
-                    <div>
-                        <h2>Salto Lunar</h2>
-                        <p class="flavorText">"Você pulou tão longe que o mapa precisou carregar."</p>
-                        <p>Aumenta a distância percorrida a cada salto.</p>
-                    </div>
-                    <div>
-                        <img src="assets/frog icon.webp" alt="jump coin">
-                        <p id="valor5">40</p>
+                    <h2>Salto Lunar</h2>
+                    <div class="btnContent">
+                        <div>
+                            <h1 id="numComp5">0</h2>
+                        </div>
+                        <div>
+                            <p class="flavorText">"Você pulou tão longe que o mapa precisou carregar."</p>
+                            <p>Aumenta a distância percorrida a cada salto.</p>
+                        </div>
+                        <div>
+                            <img src="assets/frog icon.webp" alt="jump coin">
+                            <p id="valor5">40</p>
+                        </div>
                     </div>
                 </button>
                 </ul>

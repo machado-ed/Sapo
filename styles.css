@@ -10,6 +10,7 @@
 }
 
 * {
+    user-select: none;
     justify-items: center;
     text-align: center;
     margin: 0;
@@ -28,6 +29,7 @@ body {
 
 img {
     width: 15vw;
+    -webkit-user-drag: none;
 }
 
 h2 {
@@ -35,7 +37,10 @@ h2 {
     font-family: 'Courier New', Courier, monospace;
 }
 
-p{font-size: 1vw;}
+p {
+    font-size: 1vw;
+}
+
 progress {
     direction: rtl;
 }
@@ -52,8 +57,9 @@ progress {
     flex-direction: column;
     align-items: end;
     width: 10vw;
+
     img {
-        width: 0.5vw;
+        width: 0.9vw;
         transform: translateX(var(--progressImg));
     }
 
@@ -71,13 +77,11 @@ progress {
     margin: 0;
 }
 
-.frogBtn:hover {
+.frogBtn:active {
     transform: translateY(10px) scaleX(110%) scaleY(90%);
 }
 
-.frogBtn:active {
-    transform: translateY(var(--frogJmpHg)) scaleX(90%);
-}
+
 
 .upgradeMenu {
     position: absolute;
@@ -106,7 +110,7 @@ progress {
 
     button {
         transition: transform 0.2s;
-        color:white;
+        color: white;
         background-clip: border-box;
         z-index: 0;
         margin: 10px 0;
@@ -118,23 +122,36 @@ progress {
         background-color: var(--color1);
         border: var(--color2) solid 5px;
         border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+
         cursor: pointer;
-        div{
+        h2 {
+            font-size: 1.2vmax;
+        }
+        .btnContent {
             display: flex;
-            flex-direction: column;
-            img{
-                width: 2vw;
+            align-items: center;
+            justify-content: space-around;
+            div {
+                
+                display: flex;
+                flex-direction: column;
+                margin: 5px;
+                h1{
+                    font-size: 2vw;
+                }
+                img {
+                    width: 2vw;
+                }
+
+                .flavorText {
+                    color: lightgray;
+                    font-size: 0.75vw;
+                }
             }
-             .flavorText{
-                color: lightgray;
-                font-size: 0.75vw;
-             }
         }
     }
-    button:hover{
+
+    button:hover {
         transform: translatey(-10px);
         filter: hue-rotate(-20deg);
     }
@@ -183,10 +200,13 @@ progress {
     width: 20vw;
     height: 20vh;
     z-index: 100;
-
     .valor {
-        transition: all 0.2s;
+        transition: transform 0.2s;
+        font-size: 1.2vw;
         transform: translateY(calc(var(--jmpHg)*-1));
+        h2{
+        font-size: 1.3vw;
+    }
     }
 
 }
@@ -196,23 +216,32 @@ progress {
     font-size: 1.2rem;
     margin: 0;
 }
-/* Efeitos de animação */
-.glow {
-    animation: glow 0.2s;
-}
 
+/* Efeitos de animação */
+
+.frogJump{
+    animation: jump 0.2s,glow 0.2s;
+}
 @keyframes glow {
     0% {
-        filter: brightness(1);
+        filter: brightness(1.1);
     }
 
     50% {
-        filter: brightness(2.5)
-                drop-shadow(0 0 10px #fff799)
-                drop-shadow(0 0 20px #ffd700);
+        filter: brightness(1.4) drop-shadow(0 0 10px #fff799) drop-shadow(0 0 20px #ffd700);
     }
 
     100% {
-        filter: brightness(1);
+        filter: brightness(1.1);
+    }
+}
+
+@keyframes jump {
+    50% {
+        transform: translateY(var(--frogJmpHg)) translateX(-20px) scaleX(90%);
+    }
+    80%
+    {
+        transform: translateY(0px) translateX(-10px) ;
     }
 }

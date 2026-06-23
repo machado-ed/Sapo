@@ -1,48 +1,58 @@
 // nao tem nada balanceado nos upgrades
 //Variveis pro css
-let bgPosX = 0
-let fgPosX = 0
-let rDis = parseFloat("500")
-let pDis = 0
-let wDis = 0
-let frogJmpHgt = -10
-const cssVar = document.documentElement.style
-const coinsDisplay = document.getElementById("coins");
+let bgPosX = 0 //posicao do background
+let fgPosX = 0 //posicao da terra em que o sapo esta correndo
+let objDistance = 500 // Distancia objetivo
+let rDis = parseFloat(objDistance) // distancia faltando
+let pDis = 0 // porcentagem da distancia percorrida
+let frogJmpHgt = -20 //altura base que o sapo pula 
+const cssVar = document.documentElement.style //um jeito mais conveniente de acessar as variaveis do css
+const coinsDisplay = document.getElementById("coins"); //um jeito mais facil de acessar o display de moedas(motivicao)
 const frog = document.getElementById("frog"); //variaveis para o sapo
-//variaveis pro jogo
-let coins = 0;
-let coinVal = 1;
-let walkVal = 1;
-let coinMult = 1;
-let walkMult = 1;
-let autoJmpTime = 2000;
 
+//Variaveis pro jogo
+let coins = 0; // quantidade de moedas
+let coinVal = 1; // moedas por clique
+let walkVal = 1; // distancia andada por clique
+let coinMult = 1; // multiplicador de moedas por clique
+let walkMult = 1; // multiplicador de disntancia andada por clique
+let autoJmpTime = 2000; // tempo base do autojump
+//Custos dos Upgrades
 let costUp1 = 10;
 let costUp2 = 20;
 let costUp3 = 30;
 let costUp4 = 30;
 let costUp5 = 40;
-
+//Quantidade de upgrades computadores
+let qntUp1 = 0
+let qntUp2 = 0
+let qntUp3 = 0
+let qntUp4 = 0
+let qntUp5 = 0 
 function move() {
+    //soma moedas no contador
+    coins += coinVal * coinMult;
+    coinsDisplay.textContent = parseInt(coins);
     // move o fundo e o chao de acordo como o pulo
     bgPosX += 2 * (walkVal * walkMult);
     fgPosX += 16 * (walkVal * walkMult);
     //atualiza o marcador de distancia
-    rDis -= walkVal
-    wDis += walkVal
-    pDis = wDis / 42195
-    frogJmpHgt = -10 *((walkVal+walkMult)/2)
+    rDis -= walkVal * walkMult
+    pDis = (objDistance - rDis)/ objDistance 
+    // altera  a altura do pulo de acordo com os upgrades
+    frogJmpHgt = -20 - (walkMult * walkVal)
+    // limpa o timer de animacao do display moedas 
     clearTimeout(coinJmp)
-    cssVar.setProperty('--jmpHg', '0px');
-    cssVar.setProperty('--frogJmpHg',frogJmpHgt+'px')
-    document.getElementById("stepL").innerText = 'faltando:' + rDis.toFixed(0)
-    cssVar.setProperty('--bgPosX', bgPosX + 'px');
-    cssVar.setProperty('--fgPosX', fgPosX + 'px');
-    cssVar.setProperty('--jmpHg', '10px');
-    cssVar.setProperty('--percentage', pDis);
+    // altera o css e html
+    cssVar.setProperty('--jmpHg', '0px'); //define a posicao do pulo do display moeda para 0px
+    cssVar.setProperty('--frogJmpHg',frogJmpHgt+'px') // atualiza o a altura do pulo no css
+    cssVar.setProperty('--bgPosX', bgPosX + 'px'); // altera a posX do background no css para dar impressao de movimento
+    cssVar.setProperty('--fgPosX', fgPosX + 'px'); // altera a posX do chao no css para dar impressao de movimento
+    cssVar.setProperty('--jmpHg', '10px');//define a posicao do pulo do display moeda para 10px
+    cssVar.setProperty('--percentage', pDis); //define a porcetangem para mover a foto do sapo
     document.getElementById("progressBar").value = pDis
-    coins += coinVal * coinMult;
-    coinsDisplay.textContent = parseInt(coins);
+    document.getElementById("stepL").innerText = 'faltando:' + rDis.toFixed(0)
+    
     var coinJmp = setTimeout(() => {
         cssVar.setProperty('--jmpHg', '0px');
     }, 100);
@@ -55,16 +65,14 @@ function move() {
             fgPosX = 0
         }
     // animação de pulo do sapo quero usar em booster tipo x2 quando clica mais rapido
-    frog.classList.remove("glow");
-
+    frog.classList.remove("frogJump");
     // força o navegador a reiniciar a animação se n ele vai funcionar so no primeiro clique
     void frog.offsetWidth;
-
-    frog.classList.add("glow");
+    frog.classList.add("frogJump");
 
     // fim de jogo linha 37 a 41
     if (rDis <= 0) {
-        alert("Parabéns!🐸 Depois de 500 km, o sapo finalmente terminou a maratona!");
+        alert("Parabéns!🐸 Depois de 500 m, o sapo finalmente terminou a maratona!");
 
         window.location.href = "https://www.google.com/search?q=MOUSE+NOVO";
 
@@ -76,18 +84,17 @@ function move() {
 
 
 
-//estou fazendo a divisao dos upgrades em melhora a obtencao de moedas 
-// e outra que melhora a progressao do objetivo
-//assim como multiplicadores respectivamente
-//nao sei direito como fazer para animar o autoclicker]
+
 function valCoinUp() {
     if (coins >= costUp1) {
 
         coinVal += 1;
         coins -= costUp1;
         costUp1 += 5
+        qntUp1 ++;
         coinsDisplay.textContent = parseInt(coins);
         document.getElementById("valor1").innerText = costUp1
+        document.getElementById("numComp1").innerText = qntUp1
     }
     return null
 }
@@ -97,8 +104,10 @@ function jmpDis() {
         walkVal += 1;
         coins -= costUp2;
         costUp2 += 5
+        qntUp2 ++;
         coinsDisplay.textContent = parseInt(coins);
         document.getElementById("valor2").innerText = costUp2
+        document.getElementById("numComp2").innerText = qntUp2
     }
     return null
 }
@@ -108,13 +117,15 @@ function autoJmp() {
             setTimeout(() => {
                 move()
                 autoJmpRepeat()
-            }, autoJmpTime);
+            }, autoJmpTime/2);
         }
         autoJmpTime  = autoJmpTime / 2
         coins -= costUp3;
         costUp3 = costUp3 *3
+        qntUp3 ++;
         coinsDisplay.textContent = parseInt(coins);
         document.getElementById("valor3").innerText = costUp3
+        document.getElementById("numComp3").innerText = qntUp3
     }
 
 }
@@ -130,8 +141,10 @@ function valCoinMult() {
         coinMult += 0.25;
         coins -= costUp4;
         costUp4 += 15
+        qntUp4 ++;
         coinsDisplay.textContent = parseInt(coins);
         document.getElementById("valor4").innerText = costUp4
+        document.getElementById("numComp4").innerText = qntUp4
     }
     return null
 }
@@ -141,8 +154,10 @@ function jmpHgt() {
         walkMult += 1;
         coins -= costUp5;
         costUp5 += 10
+        qntUp5 ++;
         coinsDisplay.textContent = parseInt(coins);
         document.getElementById("valor5").innerText = costUp5
+        document.getElementById("numComp5").innerText = qntUp5
     }
     return null
 }
