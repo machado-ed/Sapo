@@ -5,13 +5,14 @@ let fgPosX = 0
 let rDis = parseFloat("42195")
 let pDis = 0
 let wDis = 0
+let frogJmpHgt = -10
 const cssVar = document.documentElement.style
 const coinsDisplay = document.getElementById("coins");
 const frog = document.getElementById("frog"); //variaveis para o sapo
 //variaveis pro jogo
 let coins = 0;
 let coinVal = 1;
-let walkVal = 0.2;
+let walkVal = 1;
 let coinMult = 1;
 let walkMult = 1;
 let autoJmpTime = 2000;
@@ -24,15 +25,17 @@ let costUp5 = 40;
 
 function move() {
     // move o fundo e o chao de acordo como o pulo
-    bgPosX += 20 * (walkVal * walkMult);
-    fgPosX += 160 * (walkVal * walkMult);
+    bgPosX += 2 * (walkVal * walkMult);
+    fgPosX += 16 * (walkVal * walkMult);
     //atualiza o marcador de distancia
     rDis -= walkVal
     wDis += walkVal
     pDis = wDis / 42195
+    frogJmpHgt = -10 *((walkVal+walkMult)/2)
     clearTimeout(coinJmp)
     cssVar.setProperty('--jmpHg', '0px');
-    document.getElementById("stepL").innerText = 'faltando:' + rDis.toFixed(1)
+    cssVar.setProperty('--frogJmpHg',frogJmpHgt+'px')
+    document.getElementById("stepL").innerText = 'faltando:' + rDis.toFixed(0)
     cssVar.setProperty('--bgPosX', bgPosX + 'px');
     cssVar.setProperty('--fgPosX', fgPosX + 'px');
     cssVar.setProperty('--jmpHg', '10px');
@@ -91,7 +94,7 @@ function valCoinUp() {
 function jmpDis() {
     if (coins >= costUp2) {
 
-        walkVal += 0.2;
+        walkVal += 1;
         coins -= costUp2;
         costUp2 += 5
         coinsDisplay.textContent = parseInt(coins);
@@ -107,15 +110,9 @@ function autoJmp() {
                 autoJmpRepeat()
             }, autoJmpTime);
         }
-        if (autoJmpTime > 200) {
-            autoJmpTime -= 200;
-        }
-        else if (autoJmpTime > 50)
-            {
-                autoJmpTime -=150
-            }
+        autoJmpTime  = autoJmpTime / 2
         coins -= costUp3;
-        costUp3 += 30
+        costUp3 = costUp3 *3
         coinsDisplay.textContent = parseInt(coins);
         document.getElementById("valor3").innerText = costUp3
     }

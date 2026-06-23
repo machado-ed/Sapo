@@ -6,6 +6,7 @@
     --percentage: 0;
     --progressImg: calc(5px + (-10vw * var(--percentage)));
     --jmpHg: 0px;
+    --frogJmpHg: -10px;
 }
 
 * {
@@ -75,7 +76,7 @@ progress {
 }
 
 .frogBtn:active {
-    transform: translateY(-30px) scaleX(90%);
+    transform: translateY(var(--frogJmpHg)) scaleX(90%);
 }
 
 .upgradeMenu {
