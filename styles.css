@@ -89,8 +89,8 @@ progress {
     padding: 48px 32px;
     box-sizing: border-box;
     z-index: 1;
-    height: 80vh;
-    width: 20vw;
+    height: 70vh;
+    width: 25vw;
     right: 0;
     bottom: 0;
     min-width: 300px;
@@ -186,7 +186,7 @@ progress {
     position: absolute;
     top: 0px;
     right: 0px;
-    width: 20vw;
+    width: 25vw;
     display: flex;
     flex-direction: column;
     background-color: var(--color1);
@@ -198,15 +198,14 @@ progress {
     min-width: 300px;
     align-items: center;
     justify-content: center;
-    width: 20vw;
-    height: 20vh;
+    height: 30vh;
     z-index: 100;
     .valor {
         transition: transform 0.2s;
         font-size: 1.2vw;
         transform: translateY(calc(var(--jmpHg)*-1));
         h2{
-        font-size: 1.3vw;
+        font-size: 2vw;
     }
     }
 
