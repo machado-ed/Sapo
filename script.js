@@ -79,7 +79,7 @@ function move() {
     // fim de jogo linha 37 a 41
     if (rDis <= 0) {
         alert("Parabéns!🐸 Depois de 500 m, o sapo finalmente terminou a maratona!");
-        window.open("https://www.google.com/search?q=mouse+novo", "_blank");
+        window.open("https://www.google.com/search?q=MOUSE+NOVO", "_blank");
         gameEnd ++;
         //linha 52 e 53 são para abrir o link em uma nova aba, mas n ta funcionando, por isso coloqueiem comentario que é para abrir na mesma aba se abrir em uma nova aba fica negativo e abrindo dnv td hora  
     }
