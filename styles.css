@@ -188,6 +188,7 @@ progress {
     right: 0px;
     width: 20vw;
     display: flex;
+    flex-direction: column;
     background-color: var(--color1);
     color: rgb(30, 255, 0);
     box-sizing: border-box;

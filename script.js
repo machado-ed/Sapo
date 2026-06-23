@@ -96,6 +96,7 @@ function valCoinUp() {
         coinsDisplay.textContent = parseInt(coins); // atualiza o display de moedas moedas
         document.getElementById("valor1").innerText = costUp1 // atualiza o preco 
         document.getElementById("numComp1").innerText = qntUp1 // atualiza a quantidade de comprados
+        document.getElementById("mClick").innerText = coinVal * coinMult
     }
     return null
 }
@@ -109,6 +110,7 @@ function jmpDis() {
         coinsDisplay.textContent = parseInt(coins);
         document.getElementById("valor2").innerText = costUp2
         document.getElementById("numComp2").innerText = qntUp2
+        document.getElementById("dClick").innerText = walkVal * walkMult
     }
     return null
 }
@@ -147,6 +149,7 @@ function valCoinMult() {
         coinsDisplay.textContent = parseInt(coins);
         document.getElementById("valor4").innerText = costUp4
         document.getElementById("numComp4").innerText = qntUp4
+        document.getElementById("mClick").innerText = coinVal * coinMult
     }
     return null
 }
@@ -160,6 +163,7 @@ function jmpHgt() {
         coinsDisplay.textContent = parseInt(coins);
         document.getElementById("valor5").innerText = costUp5
         document.getElementById("numComp5").innerText = qntUp5
+        document.getElementById("dClick").innerText = walkVal * walkMult
     }
     return null
 }
