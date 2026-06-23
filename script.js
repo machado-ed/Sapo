@@ -29,7 +29,10 @@ let qntUp2 = 0
 let qntUp3 = 0
 let qntUp4 = 0
 let qntUp5 = 0 
+
+let gameEnd = 0 
 function move() {
+    if (gameEnd == 0) {
     //soma moedas no contador
     coins += coinVal * coinMult;
     coinsDisplay.textContent = parseInt(coins);
@@ -76,13 +79,11 @@ function move() {
     // fim de jogo linha 37 a 41
     if (rDis <= 0) {
         alert("Parabéns!🐸 Depois de 500 m, o sapo finalmente terminou a maratona!");
-
-        window.location.href = "https://www.google.com/search?q=MOUSE+NOVO";
-
-        //if (rDis <= 0) {
-        //window.open("https://www.google.com/search?q=mouse+novo", "_blank");
+        window.open("https://www.google.com/search?q=mouse+novo", "_blank");
+        gameEnd ++;
         //linha 52 e 53 são para abrir o link em uma nova aba, mas n ta funcionando, por isso coloqueiem comentario que é para abrir na mesma aba se abrir em uma nova aba fica negativo e abrindo dnv td hora  
     }
+}
 }
 
 //todos os upgrades seguem a mesma base do primeiro
