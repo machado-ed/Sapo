@@ -50,12 +50,15 @@ function move() {
     cssVar.setProperty('--fgPosX', fgPosX + 'px'); // altera a posX do chao no css para dar impressao de movimento
     cssVar.setProperty('--jmpHg', '10px');//define a posicao do pulo do display moeda para 10px
     cssVar.setProperty('--percentage', pDis); //define a porcetangem para mover a foto do sapo
-    document.getElementById("progressBar").value = pDis
-    document.getElementById("stepL").innerText = 'faltando:' + rDis.toFixed(0)
+    document.getElementById("progressBar").value = pDis // altera o valor da barra de progresso para a porcentagem
+    document.getElementById("stepL").innerText = 'faltando: ' + rDis.toFixed(0) // atualiza a disntacia que falta no html
     
+    // um jeito de animar o diisplay de moeda
     var coinJmp = setTimeout(() => {
+        // define a posY do display de valor para 0px depois de 0.1s
         cssVar.setProperty('--jmpHg', '0px');
     }, 100);
+    // reseta a variaveis de bgposx e fgposx para impedir um integer overflow
     if (bgPosX > 10000000) 
         {
             bgPosX = 0
@@ -82,19 +85,17 @@ function move() {
     }
 }
 
-
-
-
+//todos os upgrades seguem a mesma base do primeiro
 function valCoinUp() {
+    // checa se tem as moedas necessarias
     if (coins >= costUp1) {
-
-        coinVal += 1;
-        coins -= costUp1;
-        costUp1 += 5
-        qntUp1 ++;
-        coinsDisplay.textContent = parseInt(coins);
-        document.getElementById("valor1").innerText = costUp1
-        document.getElementById("numComp1").innerText = qntUp1
+        coinVal += 1;// incrementa o upgrade especifico
+        coins -= costUp1; // subtrai o valor de moedas
+        costUp1 += 5 // incrementa o preco
+        qntUp1 ++; // incrementa a quantidade de comprados
+        coinsDisplay.textContent = parseInt(coins); // atualiza o display de moedas moedas
+        document.getElementById("valor1").innerText = costUp1 // atualiza o preco 
+        document.getElementById("numComp1").innerText = qntUp1 // atualiza a quantidade de comprados
     }
     return null
 }
@@ -111,16 +112,17 @@ function jmpDis() {
     }
     return null
 }
+// esse e o unico que tem uma difrenca
 function autoJmp() {
+    // primeiro checa se tem o valor necessario
     if (coins >= costUp3) {
-        if (costUp3 == 30) {
-            setTimeout(() => {
-                move()
+        // depois checa se e a primeira vez comprando o uprgade
+        if (qntUp3 == 0) {
+            // inicia um timer que ativa o click
                 autoJmpRepeat()
-            }, autoJmpTime/2);
         }
-        autoJmpTime  = autoJmpTime / 2
-        coins -= costUp3;
+        autoJmpTime  = autoJmpTime / 2 // divide o tempo pela metade
+        coins -= costUp3;// o resto e igual
         costUp3 = costUp3 *3
         qntUp3 ++;
         coinsDisplay.textContent = parseInt(coins);
